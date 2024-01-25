@@ -44,7 +44,22 @@
 
  
   </style>
-
+<style>
+    /* Style for the transparent button */
+    .transparent-button {
+      margin: 10px;
+      background-color: transparent;
+      border: 2px solid #ffffff; /* You can change the border color */
+      color: #ffffff; /* You can change the text color */
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+  
   
 </head>
 <body>
@@ -73,7 +88,60 @@
          <button>Submit</button></center><br><br>
 <span id="success"></span>
     </form>
+<div id="button-container">
+  <center>
+          <a href="https://docs.google.com/spreadsheets/d/1212y5f1WRIe213LBS7k8-9Jtiyfy-43QVMPXjC_hKKA/edit#gid=0" class="transparent-button">Find data</a></center>
+      
 
+    <!-- Add more buttons as needed -->
+  </div>
+
+  <script>
+    document.querySelectorAll('.custom-button').forEach(function(button) {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        openFile(this.href);
+      });
+    });
+
+    function openFile(fileSrc) {
+      // Check if the file is an image or PDF
+      if (fileSrc.toLowerCase().endsWith(".pdf")) {
+        // Trigger PDF download
+        var a = document.createElement('a');
+        a.href = fileSrc;
+        a.download = fileSrc.split('/').pop();
+        a.click();
+      } else {
+        // Display image (you may add your image display logic here)
+        console.log('Image clicked');
+      }
+    }
+  </script>
+</body>
+</html>
+  <script>
+    document.querySelectorAll('.custom-button').forEach(function(button) {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        openFile(this.href);
+      });
+    });
+
+    function openFile(fileSrc) {
+      // Check if the file is an image or PDF
+      if (fileSrc.toLowerCase().endsWith(".pdf")) {
+        // Trigger PDF download
+        var a = document.createElement('a');
+        a.href = fileSrc;
+        a.download = fileSrc.split('/').pop();
+        a.click();
+      } else {
+        // Display image (you may add your image display logic here)
+        console.log('Image clicked');
+      }
+    }
+  </script>
   <script>
     document.querySelectorAll('.custom-button').forEach(function(button) {
       button.addEventListener('click', function(event) {
